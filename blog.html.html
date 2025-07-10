@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grphic Dsign Blog | Abdul Qadir</title>
+  <meta name="description" content="Explore insightful blogs by Abdul Qadir, one of the best graphic designers in Pakistan." />
+  <meta name="keywords" content="graphic designer blog, best graphic design articles, Abdul Qadir, creative blog, graphic tips" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #333;
+      overflow-x: hidden;
+      transition: opacity 0.5s ease-in-out;
+    }
+    body.fade-out { opacity: 0; }
+    #particles-js, #title-bg-visual {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+    #title-bg-visual {
+      background: radial-gradient(circle at top center, rgba(95, 0, 186, 0.2) 0%, transparent 80%);
+      z-index: 0;
+    }
+    .wrapper { padding-left: 60px; transition: filter 0.3s ease; position: relative; z-index: 1; }
+    .sidebar {
+      position: fixed;
+      left: 0; top: 0;
+      height: 100%; width: 60px;
+      background: #243b55; color: white;
+      padding: 2rem 0.5rem;
+      z-index: 1000;
+      transition: width 0.2s ease;
+      overflow: hidden;
+    }
+    .sidebar:hover { width: 250px; }
+    .sidebar a {
+      color: white;
+      display: flex;
+      align-items: center;
+      margin: 1.2rem 0;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .sidebar a span { display: none; }
+    .sidebar:hover a span { display: inline; margin-left: 0.5rem; }
+    .sidebar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(5px);
+    }
+    .decor-square {
+      position: absolute;
+      top: 0; left: 0;
+      width: 200px; height: 200px;
+      background: rgba(0, 114, 255, 0.08);
+      z-index: 0;
+    }
+    .decor-triangle {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 0; height: 0;
+      border-left: 200px solid transparent;
+      border-top: 200px solid rgba(95, 0, 186, 0.1);
+      z-index: 0;
+    }
+    .header {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      position: relative;
+      z-index: 2;
+      animation: slideFade 1.2s ease forwards;
+    }
+    @keyframes slideFade {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header h1 span {
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .header h1 span:hover {
+      color: #5f00ba;
+      transform: translateY(-4px);
+    }
+    .blogs-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .blog-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .blog-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .blog-card img {
+      width: 100%; height: 180px; object-fit: cover;
+    }
+    .blog-card .content { padding: 1.2rem; }
+    .blog-card h3 { color: #0072ff; margin: 0.5rem 0; }
+    .blog-card p { font-size: 0.95rem; color: #555; }
+    .read-more {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: #5f00ba;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+    .read-more:hover { transform: translateX(5px); }
+    .comment-box {
+      margin: 2rem auto;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .comment-box h4 { margin-bottom: 0.8rem; color: #243b55; }
+    .comment-box textarea {
+      width: 100%; height: 100px;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: none;
+      font-family: 'Poppins', sans-serif;
+    }
+    .comment-box button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #243b55;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .comment-box button:hover {
+      background: #5f00ba;
+    }
+<style>
+floating-svg {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.08;
+  animation: floatY 8s ease-in-out infinite alternate;
+  z-index: 0;
+  will-change: transform;
+  transform: translate(var(--xShift, 0px), var(--yShift, 0px));
+}
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(25px);
+  }
+}
+<script>
+  document.addEventListener("mousemove", function(e) {
+    const shapes = document.querySelectorAll(".floating-svg");
+    shapes.forEach((shape, index) => {
+      const speed = (index + 1) * 0.3;
+      const x = (window.innerWidth / 2 - e.clientX) / 100 * speed;
+      const y = (window.innerHeight / 2 - e.clientY) / 100 * speed;
+
+      // Add parallax shift *on top* of float animation
+      shape.style.setProperty('--xShift', `${x}px`);
+      shape.style.setProperty('--yShift', `${y}px`);
+    });
+  });
+</script>
+
+<div id="title-bg-visual">
+  <svg class="floating-svg circle" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="50" />
+  </svg>
+  <svg class="floating-svg triangle" viewBox="0 0 100 100">
+    <polygon points="50,0 0,100 100,100" />
+  </svg>
+  <svg class="floating-svg square" viewBox="0 0 100 100">
+    <rect width="100" height="100" />
+  </svg>
+  <svg class="floating-svg hex" viewBox="0 0 100 100">
+    <polygon points="50,0 93,25 93,75 50,100 7,75 7,25" />
+  </svg>
+  <svg class="floating-svg star" viewBox="0 0 100 100">
+    <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35" />
+  </svg>
+</div>
+    /* Add this to your existing CSS */
+    #title-bg-visual {
+      background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.2) 0%, transparent 70%);
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.2) 0%, transparent 70%);
+      }
+      50% {
+        background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.35) 0%, transparent 80%);
+      }
+      100% {
+        background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.2) 0%, transparent 70%);
+      }
+    }
+</style>
+
+<style>
+    #title-bg-visual {
+      background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.2) 0%, transparent 70%);
+      animation: pulseGlow 6s ease-in-out infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.2) 0%, transparent 70%);
+      }
+      50% {
+        background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.35) 0%, transparent 80%);
+      }
+      100% {
+        background: radial-gradient(circle at center top, rgba(95, 0, 186, 0.2) 0%, transparent 70%);
+      }
+    }
+
+    .floating-svg {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.08;
+      animation: floatY 10s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .floating-svg.circle {
+      top: 30px;
+      left: 20%;
+      fill: #5f00ba;
+    }
+    .floating-svg.triangle {
+      bottom: 30px;
+      right: 15%;
+      fill: #0072ff;
+      animation-delay: 3s;
+    }
+
+    @keyframes floatY {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(30px); }
+    }
+</style>
+
+<div id="title-bg-visual">
+  <svg class="floating-svg circle" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="50" />
+  </svg>
+  <svg class="floating-svg triangle" viewBox="0 0 100 100">
+    <polygon points="50,0 0,100 100,100" />
+  </svg>
+</div>
+
+.
+<style>
+    #title-bg-visual {
+      background: linear-gradient(120deg, #5f00ba, #0072ff, #ff4e50, #00c9a7, #f9d423);
+      background-size: 600% 600%;
+      animation: gradientShift 45s ease infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .floating-svg {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.06;
+      animation: floatY 12s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .floating-svg.circle {
+      top: 30px;
+      left: 20%;
+      fill: #ffffff;
+    }
+    .floating-svg.triangle {
+      bottom: 30px;
+      right: 15%;
+      fill: #ffffff;
+      animation-delay: 3s;
+    }
+    .floating-svg.square {
+      top: 50%;
+      left: 60%;
+      fill: #ffffff;
+      animation-delay: 1s;
+    }
+    .floating-svg.hex {
+      bottom: 20%;
+      left: 10%;
+      fill: #ffffff;
+      animation-delay: 5s;
+    }
+    .floating-svg.star {
+      top: 10%;
+      right: 25%;
+      fill: #ffffff;
+      animation-delay: 7s;
+    }
+
+    @keyframes floatY {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(25px); }
+    }
+</style>
+.
+
+.
+.
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div id="title-bg-visual"></div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
+  </script>
+
+  <div class="decor-square"></div>
+  <div class="decor-triangle"></div>
+
+  <div class="sidebar">
+    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+    <a href="artwork.html"><i class="fas fa-palette"></i> <span>Artwork</span></a>
+    <a href="#"><i class="fas fa-blog"></i> <span>Blog</span></a>
+  </div>
+
+  <div class="wrapper">
+    <div class="header">
+      <h1><span>V</span><span>i</span><span>e</span><span>w</span> <span>B</span><span>l</span><span>o</span><span>g</span><span>s</span></h1>
+      <p>Insights & Inspiration from Syed Abdul Qadir</p>
+    </div>
+
+    <section class="blogs-container">
+      <div class="blog-card">
+        <img src="blog1.jpg" alt="Blog 1">
+        <div class="content">
+          <h3>Top 5 Color Trends in 2025</h3>
+          <p>Explore how the latest color palettes can transform your designs into visual masterpieces...</p>
+          <a class="read-more" href="blog1.html">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="blog2.jpg" alt="Blog 2">
+        <div class="content">
+          <h3>How Typography Elevates Branding</h3>
+          <p>Discover how font choices and layout influence brand perception and engagement...</p>
+          <a class="read-more" href="blog2.html">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="blog3.jpg" alt="Blog 3">
+        <div class="content">
+          <h3>Beginner's Guide to Logo Design</h3>
+          <p>A step-by-step breakdown on designing logos that stand out and speak loud...</p>
+          <a class="read-more" href="blog3.html">Read More →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="comment-box">
+      <h4>Leave a Comment</h4>
+      <textarea placeholder="Your thoughts..."></textarea>
+      <button>Post Comment</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("a[href]");
+      links.forEach(link => {
+        if (link.hostname === window.location.hostname) {
+          link.addEventListener("click", function(e) {
+            const target = this.getAttribute("href");
+            if (target && !target.startsWith("#")) {
+              e.preventDefault();
+              document.body.classList.add("fade-out");
+              setTimeout(() => {
+                window.location = target;
+              }, 300);
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
