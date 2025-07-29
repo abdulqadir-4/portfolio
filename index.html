@@ -1,348 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best Graphic Designer | Syed Abdul Qadir Portfolio</title>
-  <meta name="description" content="Abdul Qadir - Best Graphic Designer in Pakistan. Creative, modern, and professional designs that leave a lasting impression.">
-  <meta name="keywords" content="graphic designer, best graphic designer, freelance graphic designer, creative design, Abdul Qadir designer, Karachi artist">
-  <meta name="author" content="Syed Abdul Qadir">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Qadir Portfolio</title>
   <style>
-<style>
-    /* existing styles ... */
-
-    h2 {
-      color: #0072ff;
-      text-align: center;
-      font-size: s2rem;
-      animation: fadeInRight 2s ease-in-out;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    h2:hover {
-      color: #5f00ba;
-      cursor: pointer;
-    }
-
-    h2 span {
-      display: inline-block;
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
-    h2 span:hover {
-      color: #5f00ba;
-      transform: translateY(-3px);
-    }
-
-    section a:hover h2, section a:hover p {
-      color: #5f00ba;
-    }
-  .
-    .toggle-mode {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #fff;
-  border: 2px solid #333;
-  padding: 6px 12px;
-  border-radius: 30px;
-  cursor: pointer;
-  z-index: 1000;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-}
-.toggle-mode:hover {
-  background: #000;
-  color: #fff;
-}
-.dark-mode {
-  background: #121212;
-  color: #f1f1f5;
-}
-.connect-section {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: #fff;
-  padding: 3rem 2rem;
-  text-align: center;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
-}
-.connect-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-.connect-section p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-.connect-section input,
-.connect-section textarea {
-  width: 90%;
-  max-width: 400px;
-  padding: 12px;
-  margin: 10px auto;
-  border-radius: 8px;
-  border: none;
-  display: block;
-}
-.connect-section button {
-  background: #fff;
-  color: #2575fc;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.connect-section button:hover {
-  background: #e1e1e1;
-}
 
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: linear-gradient(-45deg, #e0eafc, #cfdef3, #e6e9f0, #f0f2f5);
-      background-size: 400% 400%;
-      animation: bgflow 40s ease infinite;
-      color: #333;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
       overflow-x: hidden;
+      position: relative;
     }
-    @keyframes bgflow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
     }
-    .parallax-bg, .float-shapes {
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    section {
+      padding: 50px 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .projects, .works, .tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    canvas#particle-background {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      pointer-events: none;
-      z-index: -2;
-    }
-    .float-shapes span {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: rgba(95, 0, 186, 0.2);
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(95, 0, 186, 0.3);
-      animation: float 25s infinite ease-in-out;
-    }
-    .float-shapes span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-    .float-shapes span:nth-child(2) { top: 20%; left: 30%; animation-delay: 5s; }
-    .float-shapes span:nth-child(3) { top: 60%; left: 10%; animation-delay: 10s; }
-    .float-shapes span:nth-child(4) { top: 80%; left: 50%; animation-delay: 15s; }
-    .float-shapes span:nth-child(5) { top: 30%; left: 80%; animation-delay: 20s; }
-    .float-shapes span:nth-child(6) { top: 50%; left: 70%; animation-delay: 25s; }
-    .float-shapes span:nth-child(7) { top: 70%; left: 20%; animation-delay: 30s; }
-    .float-shapes span:nth-child(8) { top: 90%; left: 90%; animation-delay: 35s; }
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-60px) scale(1.15); }
-      100% { transform: translateY(0) scale(1); }
-    }.
-
-    .circle-decor {
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, #ff8ecf, #d06eff);
-      border-radius: 50%;
-      z-index: 0;
-      opacity: 0.5;
-    }
-    header {
-      position: relative;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: left;
-      overflow: hidden;
-    }
-    header h1 {
-      font-size: 3rem;
-      display: inline-block;
-      animation: fadeInDown 1s ease-out;
-    }
-    header h1 span {
-      display: inline-block;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-    header h1 span:hover {
-      color: #5f00ba;
-      transform: translateY(-5px);
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.85;
-      position: relative;
-      z-index: 1;
-    }
-    h2 span {
-      display: inline-block;
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
-    h2 span:hover {
-      color: #5f00ba;
-      transform: translateY(-3px);
-    }
-    nav {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-    nav a {
-      text-decoration: none;
-      background: #00c6ff;
-      color: black;
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      transition: background 0.1s;
-    }
-    nav a:hover {
-      background: #0072ff;
-    }
-    section {
-      padding: 3rem 2rem;
-      animation: fadeInUp 1.5s ease;
-    }
-    h2 {
-      color: #0072ff;
-      text-align: center;
-      font-size: 2rem;
-      animation: fadeInUp 2s ease-in-out;
-    }
-    footer {
-      background: #141e30;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-<style>
-    /* existing styles ... */
-
-    h2 {
-      color: #0072ff;
-      text-align: center;
-      font-size: 2rem;
-      animation: fadeInUp 2s ease-in-out;
-    }
-    h2:hover {
-      color: #5f00ba;
-      cursor: pointer;
+      z-index: -1;
     }
 
-    h2 span {
-      display: inline-block;
-      transition: color 0.5s ease, transform 0.7s ease;
-    }
-    h2 span:hover {
-      color: #5f00ba;
-      transform: translateY(-3px);
-    }
+    .project-card {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+.project-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.project-content h3 {
+  margin: 0;
+  padding: 10px;
+  background: #222;
+  color: #fff;
+}
 
-    section a:hover h2, section a:hover p {
-      color: #5f00ba;
-    }
-  </style>
+.scrolling-projects {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #0e0e0e;
+  padding: 20px 0;
+}
+
+.scrolling-track {
+  display: inline-block;
+  animation: scroll-left 3s linear infinite;
+}
+
+.scrolling-track a {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.scrolling-track img {
+  height: 100px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.scrolling-track img:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+   .projects-section {
+  /* Removed background-color: #f9f9f9; */
+  padding: 40px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Slider Container */
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 20px 0;
+}
+
+/* Track inside slider */
+.slider-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Top row direction */
+.slider-left .slider-track {
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Bottom row reverse direction */
+.slider-right .slider-track {
+  animation: scroll-right 25s linear infinite;
+}
+
+/* Project Card Style */
+.project-card {
+  display: inline-block;
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  padding: 20px;
+  width: 150px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+ 
   </style>
 </head>
+
 <body>
-  <div class="toggle-mode" onclick="document.body.classList.toggle('dark-mode')">🌓 Toggle Mode</div>
-  
+  <canvas id="particle-background"></canvas>
 
-<header>
-  <h1><span>Sy</span><span>ed</span> <span>A</span><span>b</span><span>d</span><span>u</span><span>l</span> <span>Q</span><span>a</span><span>d</span><span>i</span><span>r</span></h1>
-<p> <span>Creative</span>. Passionate. Best Graphic Designer in Pakistan</p>
+  <header>
+    <h1>Abdul Qadir</h1>
+    <p>Creative Designer | Developer | Editor</p>
+  </header>
 
-  <nav> <h3><a href="webcode.html">Pythonnn</a> </h3>
-     <h3><a href="webcode.html">JavaScript</a></h3>
-    <h3><a href="artt.html">Design Work</a></h3>
-  <h3><a href="blog.html">Blog</a></h3>
-   <h3><a href="#contact">Connect</a></h3>
-  </nav>
-</header>
+<!-- Project Section with Continuous Sliding -->
+<section class="projects-section">
+  <h2 class="section-title">My Projects</h2>
 
-<main>
-  <section id="python">
-    <h2>Python Projects</h2>
-    <p>Explore automation tools, bots, and apps crafted in Python for real-world solutions.</p>
-  </section>
-
-  <section id="javascript">
-    <h2>JavaScript Projects</h2>
-    <p>From interactive sliders to responsive menus—here are my JS-powered wonders.</p>
-  </section>
-
-  <section id="design">
-    <h2>Graphic Design Showcase</h2>
-    <p>A visual treat featuring my posters, banners, branding and social media creatives.</p>
-    <div class="gallery">
-      <img src="img1.jpg" alt="Design 1">
-      <img src="img2.jpg" alt="Design 2">
-      <img src="img3.jpg" alt="Design 3">
+  <!-- Top row: Left to right -->
+  <div class="slider slider-left">
+    <div class="slider-track">
+      <a href="instagram.com" class="project-card">Project 1</a>
+      <a href="#" class="project-card">Project 2</a>
+      <a href="#" class="project-card">Project 3</a>
+      <a href="#" class="project-card">Project 4</a>
+      <a href="#" class="project-card">Project 5</a>
+      <a href="#" class="project-card">Project 6</a>
+      <!-- Repeat -->
+      <a href="#" class="project-card">Project 1</a>
+      <a href="#" class="project-card">Project 2</a>
+      <a href="#" class="project-card">Project 3</a>
+      <a href="#" class="project-card">Project 4</a>
+      <a href="#" class="project-card">Project 5</a>
+      <a href="#" class="project-card">Project 6</a>
     </div>
-  </section>
-. 
-  <section id="blog">
-    <h2> View Blog</a></h2>
-    <p>Tips, trends, and tutorials on how to stand out in the creative design world.</p>
-    <div class="blog-preview">
-      <div class="post">
-        <h3><a href="blog-post1.html">How to Make Stunning Posters</a></h3>
-        <p>Learn how to create impactful poster designs in minutes.</p>
-      </div>
-      <div class="post">
-       <h3><a href="blog-post2.html">Top 5 Font Combos</a></h3>
-        <p>Boost your designs with perfect font combinations.</p>
-      </div>
-    </div>
-  </section>
-.
-</main>
+  </div>
 
-<section id="contact" class="connect-section">
-  <h2>Let’s Connect</h2>
-  <p>Interested in working together or just want to say hi? I’d love to hear from you.</p>
-  <form action="mailto:abdulqadirsyed04@gmail.com" method="post" enctype="text/plain">
-    <input type="text" placeholder="Your Name" required><br>
-    <input type="email" placeholder="Your Email" required><br>
-    <textarea placeholder="Your Message" rows="5" required></textarea><br>
-    <button type="submit">Send Message</button>
-  </form>
+  <!-- Bottom row: Right to left -->
+  <div class="slider slider-right">
+    <div class="slider-track">
+      <a href="#" class="project-card">Project 7</a>
+      <a href="#" class="project-card">Project 8</a>
+      <a href="#" class="project-card">Project 9</a>
+      <a href="#" class="project-card">Project 10</a>
+      <a href="#" class="project-card">Project 11</a>
+      <a href="#" class="project-card">Project 12</a>
+      <a href="#" class="project-card">Project 13</a>
+      <!-- Repeat -->
+      <a href="#" class="project-card">Project 7</a>
+      <a href="#" class="project-card">Project 8</a>
+      <a href="#" class="project-card">Project 9</a>
+      <a href="#" class="project-card">Project 10</a>
+      <a href="#" class="project-card">Project 11</a>
+      <a href="#" class="project-card">Project 12</a>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>&copy; 2025 Abdul Qadir — Best Graphic Designer. Crafted with creativity ✨</p>
-</footer>
 
-<script>
-  // Toggle Mode optional effect (you can add animations here too)
-</script>
-.
- <div class="parallax-bg"></div>
-  <div class="float-shapes">
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span>
-  </div>
-  <div class="circle-decor"></div> 
- . 
   
+  <section>
+    <h2>My Projects</h2>
+    <div class="projects">
+
+      <div class="card">Project 1</div>
+      <div class="card">Project 2</div>
+      <div class="card">Project 3</div>
+      <div class="card">Project 4</div>
+      <div class="card">Project 5</div>
+      <div class="card">Project 6</div>
+      <div class="card">Project 1</div>
+      <div class="card">Project 2</div>
+      <div class="card">Project 3</div>
+      <div class="card">Project 4</div>
+      <div class="card">Project 5</div>
+      <div class="card">Project 6</div>
+      </div>      
+    </div>
+  </section>
+
+  <section>
+    <h2>My Work</h2>
+    <div class="works">
+      <div class="card">Instagram Posts</div>
+      <div class="card">Ads</div>
+      <div class="card">YouTube Banners</div>
+      <div class="card">Logos</div>
+      <div class="card">Graphic Videos</div>
+      <div class="card">eBook Covers</div>
+      <div class="card">Watermarks</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tools I Use</h2>
+    <div class="tools">
+      <div class="card">Photoshop</div>
+      <div class="card">Canva</div>
+      <div class="card">CapCut</div>
+      <div class="card">VN Editor</div>
+      <div class="card">Figma</div>
+      <div class="card">Premiere Pro</div>
+    </div>
+  </section>
+
+  <script>
+    const canvas = document.getElementById("particle-background");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = "#ffffff55";
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      for (let i = 0; i < 150; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function handleParticles() {
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      handleParticles();
+      requestAnimationFrame(animate);
+    }
+
+    initParticles();
+    animate();
+  </script>
 </body>
+
 </html>
